@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.qq986945193.androidbaseproject"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        // dex突破65535的限制
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.1.0'
+    //glide的引用
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //Okhttp的引用
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    //fresco的引入
+    compile 'com.facebook.fresco:fresco:0.13.0'
+    /*引入multidex库文件*/
+    compile 'com.android.support:multidex:1.0.0'
+    //BadgeView的引入
+    compile files('libs/badgeview.jar')
+    //Gson解析工具的引入
+    compile files('libs/gson-2.3.1.jar')
+    //Picasso的引入
+    compile files('libs/picasso-2.5.2.jar')
+    //EventBus的引入
+    compile files('libs/eventbus-2.4.0.jar')
+    //Imageloader的引入
+    compile files('libs/universal-image-loader-1.9.4-with-sources.jar')
+}
